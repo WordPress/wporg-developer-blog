@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b24bd9b7d2bfb3cc4c68613a6e3e24d5",
+    "content-hash": "a3139d4fefe5cd21c38dd16fd9596726",
     "packages": [],
     "packages-dev": [
         {
@@ -2354,63 +2354,24 @@
         },
         {
             "name": "wporg/wporg-parent-2021",
-            "version": "dev-trunk",
+            "version": "dev-build",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/wporg-parent-2021.git",
-                "reference": "b6d0e49e3a3c44add7253952b3e73d9bf6a9d0cf"
+                "reference": "ea7e1ff2805e09dd7c3bdaba69da61b1f079d4a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/wporg-parent-2021/zipball/b6d0e49e3a3c44add7253952b3e73d9bf6a9d0cf",
-                "reference": "b6d0e49e3a3c44add7253952b3e73d9bf6a9d0cf",
+                "url": "https://api.github.com/repos/WordPress/wporg-parent-2021/zipball/ea7e1ff2805e09dd7c3bdaba69da61b1f079d4a2",
+                "reference": "ea7e1ff2805e09dd7c3bdaba69da61b1f079d4a2",
                 "shasum": ""
             },
-            "require-dev": {
-                "composer/installers": "~1.0",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-                "phpcompatibility/phpcompatibility-wp": "*",
-                "phpunit/phpunit": "^7.5.20",
-                "wp-coding-standards/wpcs": "2.*",
-                "wp-phpunit/wp-phpunit": "^5.4",
-                "wpackagist-plugin/gutenberg": "*",
-                "wpackagist-plugin/jetpack": "*",
-                "wpackagist-plugin/wordpress-importer": "*",
-                "wporg/wporg-mu-plugins": "dev-build",
-                "wporg/wporg-repo-tools": "dev-trunk"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "installer-paths": {
-                    "source/wp-content/mu-plugins/{$name}/": [
-                        "type:wordpress-muplugin"
-                    ],
-                    "source/wp-content/plugins/{$name}/": [
-                        "type:wordpress-plugin"
-                    ],
-                    "source/wp-content/themes/pub/{$name}/": [
-                        "type:wordpress-theme"
-                    ]
-                }
-            },
-            "scripts": {
-                "format": [
-                    "phpcbf -p"
-                ],
-                "lint": [
-                    "phpcs"
-                ]
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "homepage": "https://wordpress.org",
+            "type": "wordpress-theme",
             "support": {
-                "issues": "https://github.com/WordPress/wporg-parent-2021/issues",
-                "source": "https://github.com/WordPress/wporg-parent-2021/tree/trunk"
+                "source": "https://github.com/WordPress/wporg-parent-2021/tree/build",
+                "issues": "https://github.com/WordPress/wporg-parent-2021/issues"
             },
-            "time": "2022-05-10T16:00:09+00:00"
+            "time": "2022-05-11T17:48:15+00:00"
         },
         {
             "name": "wporg/wporg-repo-tools",

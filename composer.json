@@ -19,7 +19,7 @@
 		"installer-paths": {
 			"source/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
 			"source/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
-			"source/wp-content/themes/pub/{$name}/": ["type:wordpress-theme"]
+			"source/wp-content/themes/{$name}/": ["type:wordpress-theme"]
 		}
 	},
 	"repositories": [
@@ -48,7 +48,7 @@
 		"wpackagist-plugin/wordpress-importer": "*",
 		"wporg/wporg-repo-tools": "dev-trunk",
 		"wporg/wporg-mu-plugins": "dev-build",
-		"wporg/wporg-parent-2021": "dev-trunk",
+		"wporg/wporg-parent-2021": "dev-build",
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
 		"wp-coding-standards/wpcs": "2.*",
 		"phpcompatibility/phpcompatibility-wp": "*",

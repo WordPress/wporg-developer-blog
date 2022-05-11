@@ -18,6 +18,7 @@ phpcs.xml.dist
 
 # Ignore everything in source...
 /source/wp-content/*
+/source/wp-content/themes/*
 
 # ...except the actual source of this project.
 !/source/wp-content/themes
