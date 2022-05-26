@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3139d4fefe5cd21c38dd16fd9596726",
+    "content-hash": "97feede2625b3c3f52321cacf9028af2",
     "packages": [],
     "packages-dev": [
         {
@@ -2258,6 +2258,24 @@
                 "source": "https://github.com/wp-phpunit/wp-phpunit"
             },
             "time": "2022-02-22T20:53:17+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/code-syntax-block",
+            "version": "3.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/code-syntax-block/",
+                "reference": "tags/3.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/code-syntax-block.3.0.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/code-syntax-block/"
         },
         {
             "name": "wpackagist-plugin/gutenberg",

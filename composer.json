@@ -43,6 +43,7 @@
 	"require": {},
 	"require-dev": {
 		"composer/installers": "~1.0",
+		"wpackagist-plugin/code-syntax-block": "*",
 		"wpackagist-plugin/gutenberg": "*",
 		"wpackagist-plugin/jetpack": "*",
 		"wpackagist-plugin/wordpress-importer": "*",
