@@ -5,7 +5,8 @@ namespace WordPressdotorg\Theme\Developer_Blog;
 /**
  * Actions and filters.
  */
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
+add_action( 'wp_enqueue_scripts',       __NAMESPACE__ . '\enqueue_assets' );
+add_action( 'wp_head',                  __NAMESPACE__ . '\output_head_tags', 2 );
 add_filter( 'render_block_core/search', __NAMESPACE__ . '\search_block_add_search_action', 10, 2 );
 
 /**
@@ -40,4 +41,71 @@ function search_block_add_search_action( $block_content, $block ) {
 	}
 
 	return $block_content;
+}
+
+/**
+ * Outputs tags for the page head.
+ */
+function output_head_tags() {
+	$fields = [
+		// FYI: 'description' and 'og:description' are set further down.
+		'og:title'       => wp_get_document_title(),
+		'og:site_name'   => get_bloginfo( 'name' ),
+		'og:url'         => home_url( '/' ),
+		'twitter:title'  => wp_get_document_title(),
+		'twitter:site'   => '@WordPress',
+	];
+
+	$desc = '';
+
+	if ( is_singular() ) {
+		$post = get_queried_object();
+		if ( $post ) {
+			$desc = $post->post_content;
+		}
+	}
+
+	// Actually set field values for description.
+	if ( ! empty( $desc ) ) {
+		$desc = wp_strip_all_tags( $desc );
+		$desc = str_replace( '&nbsp;', ' ', $desc );
+		$desc = preg_replace( '/\s+/', ' ', $desc );
+
+		// Trim down to <150 characters based on full words.
+		if ( strlen( $desc ) > 150 ) {
+			$truncated = '';
+			$words = preg_split( "/[\n\r\t ]+/", $desc, -1, PREG_SPLIT_NO_EMPTY );
+
+			while ( $words ) {
+				$word = array_shift( $words );
+				if ( strlen( $truncated ) + strlen( $word ) >= 141 ) { /* 150 - strlen( ' &hellip;' ) */
+					break;
+				}
+
+				$truncated .= $word . ' ';
+			}
+
+			$truncated = trim( $truncated );
+
+			if ( $words ) {
+				$truncated .= '&hellip;';
+			}
+
+			$desc = $truncated;
+		}
+
+		$fields['description']    = $desc;
+		$fields['og:description'] = $desc;
+	}
+
+	// Output fields.
+	foreach ( $fields as $property => $content ) {
+		$attribute = 0 === strpos( $property, 'og:' ) ? 'property' : 'name';
+		printf(
+			'<meta %s="%s" content="%s" />' . "\n",
+			esc_attr( $attribute ),
+			esc_attr( $property ),
+			esc_attr( $content )
+		);
+	}
 }
