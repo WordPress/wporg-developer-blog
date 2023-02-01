@@ -8,6 +8,7 @@ namespace WordPressdotorg\Theme\Developer_Blog;
 add_action( 'wp_enqueue_scripts',       __NAMESPACE__ . '\enqueue_assets' );
 add_action( 'wp_head',                  __NAMESPACE__ . '\output_head_tags', 2 );
 add_filter( 'render_block_core/search', __NAMESPACE__ . '\search_block_add_search_action', 10, 2 );
+add_filter( 'excerpt_length',           __NAMESPACE__ . '\customize_excerpt_length', 10 );
 
 /**
  * Enqueue scripts and styles.
@@ -56,46 +57,15 @@ function output_head_tags() {
 		'twitter:site'   => '@WordPress',
 	];
 
-	$desc = '';
+	$excerpt = '';
 
 	if ( is_singular() ) {
-		$post = get_queried_object();
-		if ( $post ) {
-			$desc = $post->post_content;
-		}
+		$excerpt = get_the_excerpt();
 	}
 
-	// Actually set field values for description.
-	if ( ! empty( $desc ) ) {
-		$desc = wp_strip_all_tags( $desc );
-		$desc = str_replace( '&nbsp;', ' ', $desc );
-		$desc = preg_replace( '/\s+/', ' ', $desc );
-
-		// Trim down to <150 characters based on full words.
-		if ( strlen( $desc ) > 150 ) {
-			$truncated = '';
-			$words = preg_split( "/[\n\r\t ]+/", $desc, -1, PREG_SPLIT_NO_EMPTY );
-
-			while ( $words ) {
-				$word = array_shift( $words );
-				if ( strlen( $truncated ) + strlen( $word ) >= 141 ) { /* 150 - strlen( ' &hellip;' ) */
-					break;
-				}
-
-				$truncated .= $word . ' ';
-			}
-
-			$truncated = trim( $truncated );
-
-			if ( $words ) {
-				$truncated .= '&hellip;';
-			}
-
-			$desc = $truncated;
-		}
-
-		$fields['description']    = $desc;
-		$fields['og:description'] = $desc;
+	if ( ! empty( $excerpt ) ) {
+		$fields['description']    = $excerpt;
+		$fields['og:description'] = $excerpt;
 	}
 
 	// Output fields.
@@ -108,4 +78,14 @@ function output_head_tags() {
 			esc_attr( $content )
 		);
 	}
+}
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function customize_excerpt_length( $length ) {
+	return 20;
 }
