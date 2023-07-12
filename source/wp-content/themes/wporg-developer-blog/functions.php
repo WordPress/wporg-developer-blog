@@ -5,10 +5,9 @@ namespace WordPressdotorg\Theme\Developer_Blog;
 /**
  * Actions and filters.
  */
-add_action( 'wp_enqueue_scripts',       __NAMESPACE__ . '\enqueue_assets' );
-add_action( 'wp_head',                  __NAMESPACE__ . '\output_head_tags', 2 );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 add_filter( 'render_block_core/search', __NAMESPACE__ . '\search_block_add_search_action', 10, 2 );
-add_filter( 'excerpt_length',           __NAMESPACE__ . '\customize_excerpt_length', 10 );
+add_filter( 'excerpt_length', __NAMESPACE__ . '\customize_excerpt_length', 10 );
 
 /**
  * Enqueue scripts and styles.
@@ -42,42 +41,6 @@ function search_block_add_search_action( $block_content, $block ) {
 	}
 
 	return $block_content;
-}
-
-/**
- * Outputs tags for the page head.
- */
-function output_head_tags() {
-	$fields = [
-		// FYI: 'description' and 'og:description' are set further down.
-		'og:title'       => wp_get_document_title(),
-		'og:site_name'   => get_bloginfo( 'name' ),
-		'og:url'         => home_url( '/' ),
-		'twitter:title'  => wp_get_document_title(),
-		'twitter:site'   => '@WordPress',
-	];
-
-	$excerpt = '';
-
-	if ( is_singular() ) {
-		$excerpt = get_the_excerpt();
-	}
-
-	if ( ! empty( $excerpt ) ) {
-		$fields['description']    = $excerpt;
-		$fields['og:description'] = $excerpt;
-	}
-
-	// Output fields.
-	foreach ( $fields as $property => $content ) {
-		$attribute = 0 === strpos( $property, 'og:' ) ? 'property' : 'name';
-		printf(
-			'<meta %s="%s" content="%s" />' . "\n",
-			esc_attr( $attribute ),
-			esc_attr( $property ),
-			esc_attr( $content )
-		);
-	}
 }
 
 /**
