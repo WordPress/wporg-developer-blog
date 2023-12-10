@@ -77,6 +77,10 @@ function search_block_add_search_action( $block_content, $block ) {
  * If the Author Name block has the display-view-profile-text class
  * and is linked, display the "View author profile" text instead
  * of the author's name. This is used on Author archives.
+ * 
+ * @param string $block_content The block content about to be appended.
+ * @param array  $block         The block details.
+ * @return string The filtered block content.
  */
 function author_name_block_update_link_to_profile_text( $block_content, $block ) {
 	if ( 
