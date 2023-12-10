@@ -14,9 +14,11 @@
 		<div class="wp-block-column" style="flex-basis:300px">
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
 			<div class="wp-block-group">
-				<!-- wp:query-title {"type":"archive","fontSize":"heading-2"} /-->
-
-				<!-- wp:term-description /-->
+				<!-- wp:heading {"level":1,"fontSize":"heading-2"} -->
+				<h1 class="wp-block-heading has-heading-2-font-size">All posts</h1>
+				<!-- /wp:heading -->
+                
+				<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Type your search keyword","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"query":{"post_type":"post"}} /-->
 			</div>
 			<!-- /wp:group -->
 		</div>
@@ -54,7 +56,7 @@
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"10px","bottom":"10px"}}},"layout":{"type":"constrained"}} -->
 					<div class="wp-block-group" style="padding-top:10px;padding-bottom:10px">
 						<!-- wp:heading {"fontSize":"heading-3"} -->
-						<h2 class="wp-block-heading has-heading-3-font-size">There no posts with this term</h2>
+						<h2 class="wp-block-heading has-heading-3-font-size">No results found</h2>
 						<!-- /wp:heading -->
 
 						<!-- wp:paragraph -->

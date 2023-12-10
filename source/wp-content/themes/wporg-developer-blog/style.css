@@ -14,3 +14,85 @@
  * Note: only add styles here in cases where you can't achieve the style with
  * templates or theme.json settings.
  */
+
+/*
+ * Add inline styling for code and kbd markup.
+ */
+:where( :not( pre ) > code ),
+kbd {
+    background: var(--wp--preset--color--light-grey-2);
+    border-radius: 2px;
+    display: inline-block;
+    line-height: var(--wp--custom--body--extra-small--typography--line-height);
+    max-width: 100%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+/*
+ * Remove text-decoration from linked footer headings.
+ */
+.wporg-front-page-footer .wp-block-heading a {
+    text-decoration: none
+}
+
+.wporg-front-page-footer .wp-block-heading a:hover {
+    text-decoration-line: underline;
+}
+
+/*
+ * Fix local navigation submenu styles.
+ */
+.wp-block-navigation ul {
+    padding: 0 !important;
+}
+
+.wp-block-navigation .wp-block-navigation__submenu-container {
+    border: 0 !important;
+    background-color: #1c2024 !important;
+}
+
+/*
+ * Improve the styling of the RSS block.
+ */
+.wp-block-rss .wp-block-rss__item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--wp--preset--spacing--10)
+}
+
+.wp-block-rss .wp-block-rss__item .wp-block-rss__item-title {
+    flex-basis: 100%;
+}
+
+.wp-block-rss .wp-block-rss__item .wp-block-rss__item-author, 
+.wp-block-rss .wp-block-rss__item .wp-block-rss__item-publish-date {
+    font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-rss .wp-block-rss__item .wp-block-rss__item-author {
+    margin-left: 5px;
+}
+
+/*
+ * Customize the list style of the Table of Contents block.
+ * (There is currently no way to modify the list type)
+ */
+.wp-block-table-of-contents ol {
+    list-style: disc;
+    margin: 0;
+}
+
+/*
+ * Improve the styling of the Jetpack Subscriptions block.
+ */
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline.wp-block-jetpack-subscriptions__show-subs .wp-block-jetpack-subscriptions__subscount {
+    text-align: left;
+}
+
+/*
+ * Utility class to remove row gap. Generally used on Row blocks.
+ */
+ .remove-row-gap {
+    row-gap: 0 !important;
+}
