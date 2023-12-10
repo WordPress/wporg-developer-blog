@@ -30,8 +30,8 @@ function enqueue_assets() {
  */
 function editor_setup() {
 
-    // Enqueue editor styles.
-    add_editor_style( 'style.css' );
+	// Enqueue editor styles.
+	add_editor_style( 'style.css' );
 
 	// Remove core block patterns.
 	remove_theme_support( 'core-block-patterns' );
@@ -83,7 +83,6 @@ function author_name_block_update_link_to_profile_text( $block_content, $block )
 		$block['attrs']['isLink'] && 
 		( isset( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'display-view-profile-text') !== false )
 	) {
-
 		$pattern        = '/(<div[^>]*>.*<a[^>]*>).*?(<\/a>.*<\/div>)/is';
 		$replacement    = '$1' . __( 'View author profile' ) . '<span aria-hidden="true">↗</span>$2';
 		$updated_markup = preg_replace( $pattern, $replacement, $block_content );
