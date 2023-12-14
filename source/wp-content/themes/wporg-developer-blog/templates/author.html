@@ -14,17 +14,17 @@
 		<div class="wp-block-column" style="flex-basis:300px">
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
 			<div class="wp-block-group">
-                <!-- wp:group {"style":{"spacing":{"blockGap":"15px"}},"className":"remove-row-gap","layout":{"type":"flex","flexWrap":"wrap"}} -->
-                <div class="wp-block-group remove-row-gap">
-                    <!-- wp:avatar {"size":50,"style":{"border":{"radius":"100px"}}} /-->
+				<!-- wp:group {"style":{"spacing":{"blockGap":"15px"}},"className":"remove-row-gap","layout":{"type":"flex","flexWrap":"wrap"}} -->
+				<div class="wp-block-group remove-row-gap">
+					<!-- wp:avatar {"size":50,"style":{"border":{"radius":"100px"}}} /-->
 
-                    <!-- wp:query-title {"type":"archive","showPrefix":false,"fontSize":"heading-3"} /-->
-                </div>
-                <!-- /wp:group -->
-    
-                <!-- wp:post-author-biography /-->
-    
-                <!-- wp:post-author-name {"isLink":true,"linkTarget":"_blank","className":"display-view-profile-text","fontSize":"normal"} /-->
+					<!-- wp:query-title {"type":"archive","showPrefix":false,"fontSize":"heading-3"} /-->
+				</div>
+				<!-- /wp:group -->
+	
+				<!-- wp:post-author-biography /-->
+	
+				<!-- wp:post-author-name {"isLink":true,"linkTarget":"_blank","className":"display-view-profile-text","fontSize":"normal"} /-->
 			</div>
 			<!-- /wp:group -->
 		</div>
@@ -41,7 +41,7 @@
 						<div class="wp-block-group">
 							<!-- wp:post-title {"isLink":true,"fontSize":"heading-3"} /-->
 
-							<!-- wp:template-part {"slug":"post-meta"} /-->
+							<!-- wp:pattern {"slug":"wporg-developer-blog/post-meta"} /-->
 						</div>
 						<!-- /wp:group -->
 
@@ -59,21 +59,8 @@
 				<!-- /wp:query-pagination -->
 
 				<!-- wp:query-no-results -->
-					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","padding":{"top":"10px","bottom":"10px"}}},"layout":{"type":"constrained"}} -->
-					<div class="wp-block-group" style="padding-top:10px;padding-bottom:10px">
-						<!-- wp:heading {"fontSize":"heading-3"} -->
-						<h2 class="wp-block-heading has-heading-3-font-size">There no posts with this term</h2>
-						<!-- /wp:heading -->
-
-						<!-- wp:paragraph -->
-						<p>View <a href="/all-posts">all posts</a> or try a search.</p>
-						<!-- /wp:paragraph -->
-
-						<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Type your search keyword","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"query":{"post_type":"post"}} /-->
-					</div>
-					<!-- /wp:group -->
+					<!-- wp:pattern {"slug":"wporg-developer-blog/query-no-results-author"} /-->
 				<!-- /wp:query-no-results -->
-
 			</div>
 			<!-- /wp:query -->
 		</div>

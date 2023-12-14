@@ -39,7 +39,7 @@ function editor_setup() {
 	// Register a custom pattern category.
 	register_block_pattern_category(
 		'developer-blog', 
-		array( 'label' => __( 'Developer Blog' ) )
+		array( 'label' => __( 'Developer Blog', 'wporg' ) )
 	);
 }
 
