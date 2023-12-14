@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Title: All posts sidebar
