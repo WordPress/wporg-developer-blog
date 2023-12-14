@@ -84,6 +84,14 @@ kbd {
 }
 
 /*
+ * Add custom separator in the post-meta Row block.
+ */
+ .wp-block-group.is-style-post-meta > :not(:last-child)::after {
+    content: "·";
+    padding-left: var(--wp--preset--spacing--10);
+}
+
+/*
  * Improve the styling of the Jetpack Subscriptions block.
  */
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline.wp-block-jetpack-subscriptions__show-subs .wp-block-jetpack-subscriptions__subscount {
