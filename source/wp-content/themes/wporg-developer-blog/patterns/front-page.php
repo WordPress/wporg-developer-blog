@@ -85,7 +85,7 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"width":""} -->
+		<!-- wp:column -->
 		<div class="wp-block-column">
 			<!-- wp:query {"queryId":3,"query":{"perPage":"5","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false}} -->
 			<div class="wp-block-query">
