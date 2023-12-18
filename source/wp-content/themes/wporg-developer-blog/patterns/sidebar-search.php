@@ -2,7 +2,6 @@
 /**
  * Title: Search sidebar
  * Slug: wporg-developer-blog/sidebar-search
- * Inserter: hidden
  */
 
 ?>

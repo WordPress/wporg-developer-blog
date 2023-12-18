@@ -2,7 +2,6 @@
 /**
  * Title: Front page content
  * Slug: wporg-developer-blog/front-page
- * Inserter: hidden
  */
 
 ?>

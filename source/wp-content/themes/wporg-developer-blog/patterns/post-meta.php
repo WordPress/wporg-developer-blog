@@ -2,7 +2,6 @@
 /**
  * Title: Footer content
  * Slug: wporg-developer-blog/post-meta
- * Inserter: hidden
  */
 
 ?>

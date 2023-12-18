@@ -2,7 +2,6 @@
 /**
  * Title: All posts sidebar
  * Slug: wporg-developer-blog/sidebar-all-posts
- * Inserter: hidden
  */
 
 ?>

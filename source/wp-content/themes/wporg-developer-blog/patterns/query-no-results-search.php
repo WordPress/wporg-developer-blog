@@ -2,7 +2,6 @@
 /**
  * Title: No results message (search)
  * Slug: wporg-developer-blog/query-no-results-search
- * Inserter: hidden
  */
 
 ?>
