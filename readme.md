@@ -1,5 +1,7 @@
 # WordPress.org Developer Blog
 
+This repository is home to the block theme that powers the [WordPress Developer Blog](https://developer.wordpress.org/news/). The theme is a child theme of [wporg-parent-2021](https://github.com/WordPress/wporg-parent-2021).
+
 ## Development
 
 ### Prerequisites
