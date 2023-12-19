@@ -23,6 +23,14 @@ function enqueue_assets() {
 		array( 'wporg-parent-2021-style', 'wporg-global-fonts' ),
 		filemtime( __DIR__ . '/style.css' )
 	);
+
+	// Preload the heading font(s).
+	if ( is_callable( 'global_fonts_preload' ) ) {
+		/* translators: Subsets can be any of cyrillic, cyrillic-ext, greek, greek-ext, vietnamese, latin, latin-ext. */
+		$subsets = _x( 'Latin', 'Heading font subsets, comma separated', 'wporg' );
+		// All headings.
+		global_fonts_preload( 'IBM Plex Sans, IBM Plex Sans SemiBold', $subsets );
+	}
 }
 
 /**
@@ -44,7 +52,7 @@ function editor_setup() {
 }
 
 /**
- * Filter the except length to 45 words. This is about 2.5 lines of 
+ * Filter the except length to 45 words. This is about 2.5 lines of
  * text in the main query.
  *
  * @param int $length Excerpt length.
