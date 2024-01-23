@@ -10,6 +10,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\editor_setup' );
 add_filter( 'excerpt_length', __NAMESPACE__ . '\customize_excerpt_length', 10 );
 add_filter( 'render_block_core/search', __NAMESPACE__ . '\search_block_add_search_action', 10, 2 );
 add_filter( 'render_block_core/post-author-name', __NAMESPACE__ . '\author_name_block_update_link_to_profile_text', 10, 2 );
+
 /**
  * Enqueue scripts and styles.
  */
@@ -46,7 +47,7 @@ function editor_setup() {
 
 	// Register a custom pattern category.
 	register_block_pattern_category(
-		'developer-blog', 
+		'developer-blog',
 		array( 'label' => __( 'Developer Blog', 'wporg' ) )
 	);
 }
@@ -85,20 +86,20 @@ function search_block_add_search_action( $block_content, $block ) {
  * If the Author Name block has the display-view-profile-text class
  * and is linked, display the "View author profile" text instead
  * of the author's name. This is used on Author archives.
- * 
+ *
  * @param string $block_content The block content about to be appended.
  * @param array  $block         The block details.
  * @return string The filtered block content.
  */
 function author_name_block_update_link_to_profile_text( $block_content, $block ) {
-	if ( 
-		$block['attrs']['isLink'] && 
-		( isset( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'display-view-profile-text') !== false )
+	if (
+		$block['attrs']['isLink'] &&
+		( isset( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'display-view-profile-text' ) !== false )
 	) {
 		$pattern        = '/(<div[^>]*>.*<a[^>]*>).*?(<\/a>.*<\/div>)/is';
-		$replacement    = '$1' . __( 'View author profile' ) . '<span aria-hidden="true">↗</span>$2';
+		$replacement    = '$1' . __( 'View author profile', 'wporg' ) . '<span aria-hidden="true">↗</span>$2';
 		$updated_markup = preg_replace( $pattern, $replacement, $block_content );
-	
+
 		return $updated_markup;
 	}
 
