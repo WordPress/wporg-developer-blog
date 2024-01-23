@@ -9,7 +9,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 add_action( 'after_setup_theme', __NAMESPACE__ . '\editor_setup' );
 add_filter( 'excerpt_length', __NAMESPACE__ . '\customize_excerpt_length', 10 );
 add_filter( 'render_block_core/search', __NAMESPACE__ . '\search_block_add_search_action', 10, 2 );
-add_filter( 'render_block_core/post-author-name', __NAMESPACE__ . '\author_name_block_update_link_to_profile_text', 10, 2 );
+add_filter( 'render_block_core/post-author-name', __NAMESPACE__ . '\author_name_block_update_link_to_profile_text', 9, 2 );
 
 /**
  * Enqueue scripts and styles.
@@ -96,12 +96,17 @@ function author_name_block_update_link_to_profile_text( $block_content, $block )
 		$block['attrs']['isLink'] &&
 		( isset( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'display-view-profile-text' ) !== false )
 	) {
+		// Remove the filter which adds "By …".
+		remove_filter( 'render_block_core/post-author-name', 'WordPressdotorg\Theme\Parent_2021\Gutenberg_Tweaks\render_author_prefix', 10, 2 );
 		$pattern        = '/(<div[^>]*>.*<a[^>]*>).*?(<\/a>.*<\/div>)/is';
 		$replacement    = '$1' . __( 'View author profile', 'wporg' ) . '<span aria-hidden="true">↗</span>$2';
 		$updated_markup = preg_replace( $pattern, $replacement, $block_content );
 
 		return $updated_markup;
 	}
-
+	if ( ! has_filter( 'render_block_core/post-author-name', 'WordPressdotorg\Theme\Parent_2021\Gutenberg_Tweaks\render_author_prefix' ) ) {
+		// Add "By …" filter back, if it was unregistered.
+		add_filter( 'render_block_core/post-author-name', 'WordPressdotorg\Theme\Parent_2021\Gutenberg_Tweaks\render_author_prefix', 10, 2 );
+	}
 	return $block_content;
 }
