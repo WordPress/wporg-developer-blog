@@ -184,5 +184,5 @@ function custom_open_graph_tags( $tags = [] ) {
  * Set a default image for og:image & twitter:image.
  */
 function jetpack_open_graph_image_default() {
-	return 'https://developer.wordpress.org/wp-content/themes/wporg-developer-2023/images/opengraph-image.png';
+	return 'https://developer.wordpress.org/wp-content/themes/wporg-developer-blog/images/opengraph-image.png';
 }
