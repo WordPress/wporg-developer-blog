@@ -11,8 +11,8 @@
 	<div class="wp-block-columns alignwide">
 		<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 		<div class="wp-block-column">
-			<!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontSize":"large"} -->
-			<h2 class="wp-block-heading has-large-font-size" style="font-style:normal;font-weight:400"><?php esc_html_e( 'Have an idea for a new post?', 'wporg' ); ?></h2>
+			<!-- wp:heading {"style":{"typography":{"fontStyle":"normal"}},"fontSize":"large"} -->
+			<h2 class="wp-block-heading has-large-font-size" style="font-style:normal"><?php esc_html_e( 'Have an idea for a new post?', 'wporg' ); ?></h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|30","left":"var:preset|spacing|40"}}}} -->
@@ -55,8 +55,8 @@
 
 		<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 		<div class="wp-block-column">
-			<!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontSize":"large"} -->
-			<h2 class="wp-block-heading has-large-font-size" style="font-style:normal;font-weight:400"><?php esc_html_e( 'Subscribe to the Blog', 'wporg' ); ?></h2>
+			<!-- wp:heading {"style":{"typography":{"fontStyle":"normal"}},"fontSize":"large"} -->
+			<h2 class="wp-block-heading has-large-font-size" style="font-style:normal;"><?php esc_html_e( 'Subscribe to the Blog', 'wporg' ); ?></h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:jetpack/subscriptions {"subscribePlaceholder":"Email Address","showSubscribersTotal":true,"borderRadius":2,"borderWeight":0,"className":"wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline is-style-compact","style":{"spacing":{"padding":{"right":"0","left":"0"}}}} /-->
