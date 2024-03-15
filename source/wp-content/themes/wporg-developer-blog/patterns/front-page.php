@@ -40,6 +40,8 @@
 					<!-- wp:post-author-name {"isLink":true,"fontSize":"small"} /-->
 
 					<!-- wp:post-date /-->
+
+					<!-- wp:post-terms {"term":"post_tag"} /-->
 				</div>
 				<!-- /wp:group -->
 			</div>
