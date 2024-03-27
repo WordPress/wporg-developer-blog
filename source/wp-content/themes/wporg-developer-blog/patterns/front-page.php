@@ -9,8 +9,8 @@
 <div class="wp-block-group alignfull has-white-color has-charcoal-2-background-color has-text-color has-background has-link-color" style="padding-right:var(--wp--preset--spacing--edge-space);padding-left:var(--wp--preset--spacing--edge-space)">
 	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
 	<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
-		<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"50px","fontStyle":"normal","fontWeight":"400"}},"fontFamily":"ibm-plex-sans"} -->
-		<h1 class="wp-block-heading has-ibm-plex-sans-font-family" style="font-size:50px;font-style:normal;font-weight:400"><?php esc_html_e( 'Developer Blog', 'wporg' ); ?></h1>
+		<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"50px","fontStyle":"normal","fontWeight":"400"}},"fontFamily":"eb-garamond"} -->
+		<h1 class="wp-block-heading has-eb-garamond-font-family" style="font-size:50px;font-style:normal;font-weight:400"><?php esc_html_e( 'Developer Blog', 'wporg' ); ?></h1>
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.3"}},"textColor":"white"} -->
@@ -31,7 +31,8 @@
 				<!-- wp:heading -->
 					<h2 class="wp-block-heading screen-reader-text"><?php esc_html_e( 'Featured post', 'wporg' ); ?></h2>
 				<!-- /wp:heading -->
-				<!-- wp:post-title {"level":3,"isLink":true,"style":{"spacing":{"margin":{"top":"0"}}},"fontSize":"heading-2"} /-->
+				<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"heading-2","fontFamily":"inter","style":{"spacing":{"margin":{"top":"0"}},"typography":{"fontStyle":"normal","fontWeight":"600"}}} /-->
+
 
 				<!-- wp:post-excerpt /-->
 
@@ -87,7 +88,7 @@
 					<div class="wp-block-group">
 						<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"default"}} -->
 						<div class="wp-block-group">
-							<!-- wp:post-title {"isLink":true,"fontSize":"heading-3"} /-->
+							<!-- wp:post-title {"isLink":true,"fontSize":"heading-4","fontFamily":"inter","style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} /-->
 
 							<!-- wp:pattern {"slug":"wporg-developer-blog/post-meta"} /-->
 						</div>

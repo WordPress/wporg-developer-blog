@@ -36,7 +36,7 @@ function enqueue_assets() {
 		/* translators: Subsets can be any of cyrillic, cyrillic-ext, greek, greek-ext, vietnamese, latin, latin-ext. */
 		$subsets = _x( 'Latin', 'Heading font subsets, comma separated', 'wporg' );
 		// All headings.
-		global_fonts_preload( 'IBM Plex Sans, IBM Plex Sans SemiBold', $subsets );
+		global_fonts_preload( 'EB Garamond, Inter', $subsets );
 	}
 }
 
