@@ -10,6 +10,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\editor_setup' );
 add_filter( 'excerpt_length', __NAMESPACE__ . '\customize_excerpt_length', 10 );
 add_filter( 'render_block_core/search', __NAMESPACE__ . '\search_block_add_search_action', 10, 2 );
 add_filter( 'render_block_core/post-author-name', __NAMESPACE__ . '\author_name_block_update_link_to_profile_text', 9, 2 );
+add_filter( 'render_block_core/code', __NAMESPACE__ . '\code_block_add_line_breaks', 10, 1 );
 
 // Enable Jetpack opengraph by default so we can customize it.
 add_filter( 'jetpack_enable_open_graph', '__return_true' );
@@ -86,6 +87,21 @@ function search_block_add_search_action( $block_content, $block ) {
 	}
 
 	return $block_content;
+}
+
+/**
+ * Replace breaks with new lines in all Code blocks on the front end.
+ * This filter fixes an issue in the Code Syntax Highlighting Block.
+ *
+ * @param string $block_content The block content about to be filtered.
+ * @return string The filtered block content.
+ */
+function code_block_add_line_breaks( $block_content ) {
+	return str_ireplace(
+		[ '<br>', '<br/>', '<br />' ],
+		"\n",
+		$block_content
+	);
 }
 
 /**
