@@ -43,11 +43,11 @@ kbd {
 /*
  * Fix local navigation submenu styles.
  */
-.wp-block-navigation ul {
+.wp-block-wporg-local-navigation-bar .wp-block-navigation ul {
     padding: 0 !important;
 }
 
-.wp-block-navigation .wp-block-navigation__submenu-container {
+.wp-block-wporg-local-navigation-bar .wp-block-navigation .wp-block-navigation__submenu-container {
     border: 0 !important;
     background-color: #1c2024 !important;
 }
