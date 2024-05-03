@@ -41,18 +41,6 @@ kbd {
 }
 
 /*
- * Fix local navigation submenu styles.
- */
-.wp-block-navigation ul {
-    padding: 0 !important;
-}
-
-.wp-block-navigation .wp-block-navigation__submenu-container {
-    border: 0 !important;
-    background-color: #1c2024 !important;
-}
-
-/*
  * Improve the styling of the RSS block.
  */
 .wp-block-rss .wp-block-rss__item {
