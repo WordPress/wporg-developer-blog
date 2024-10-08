@@ -18,7 +18,8 @@ add_action(
 	'init',
 	function() : void {
 		$post_type = 'snippets';
-		$tax       = 'coding-lang';
+		$lang_tax  = 'coding-lang';
+		$api_tax   = 'api';
 
 		// Register the custom post type.
 		$cpt_args = [
@@ -33,12 +34,36 @@ add_action(
 			'show_in_rest' => true,
 			'menu_icon'    => 'dashicons-editor-code',
 			'supports'     => [ 'title', 'editor', 'author', 'thumbnail' ],
+			'template'     => [
+				[
+					'core/paragraph',
+					[
+						'placeholder' => __( 'Describe your use case for this snippet', 'wporg' )
+					],
+				],
+				[ 'core/code' ],
+				[
+					'core/heading',
+					[
+						'level'   => 2,
+						'content' => 'Relevant links',
+					],
+				],
+				[ 'core/list' ],
+				[
+					'core/paragraph',
+					[
+						'align'   => 'right',
+						'content' => '<em>Please add props here</em>'
+					],
+				],
+			],
 		];
 
 		register_post_type( $post_type, $cpt_args );
 
-		// Register the custom taxonomy
-		$tax_args = [
+		// Register the coding lang taxonomy
+		$lang_tax_args = [
 			'public'       => true,
 			'labels'       => [
 				'name'          => _x( 'Coding languages', 'taxonomy general name', 'wporg' ),
@@ -48,8 +73,44 @@ add_action(
 			],
 			'show_in_rest' => true,
 		];
-\
-		register_taxonomy( $tax, $post_type, $tax_args );
+		register_taxonomy( $lang_tax, $post_type, $lang_tax_args );
 
+		// Register the API taxonomy
+		$api_tax_args = [
+			'public'       => true,
+			'labels'       => [
+				'name'          => _x( 'APIs', 'taxonomy general name', 'wporg' ),
+				'singular_name' => _x( 'API', 'taxonomy singular name', 'wporg' ),
+				'add_new_item'  => __( 'Add New API', 'wporg' ),
+				'not_found'     => __( 'No APIs found', 'wporg' ),
+			],
+			'show_in_rest' => true,
+		];
+		register_taxonomy( $api_tax, $post_type, $api_tax_args );
+	}
+);
+
+// Filter snippets title to be prefixed.
+add_filter(
+	'the_title',
+	function( $title, $post_id ) {
+		if ( 'snippets' === get_post_type( $post_id ) ) {
+			return __( 'Snippet: ', 'wporg' ) . $title;
+		}
+		return $title;
+	},
+	10,
+	2
+);
+
+// Add the snippets post type to the main RSS feed.
+add_filter(
+	'request',
+	function( $query_vars ) {
+		$post_type = 'snippets';
+		if ( isset( $query_vars['feed'] ) && ! isset( $query_vars['post_type'] ) ) {
+			$query_vars['post_type'] = [ 'post', $post_type ];
+		}
+		return $query_vars;
 	}
 );
