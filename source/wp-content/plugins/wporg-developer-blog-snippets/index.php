@@ -95,7 +95,10 @@ add_filter(
 	'the_title',
 	function( $title, $post_id ) {
 		if ( 'snippets' === get_post_type( $post_id ) ) {
-			return __( 'Snippet: ', 'wporg' ) . $title;
+			/*
+			 * Translators: Prefix for all titles of Snippets.
+			 */
+			return sprintf( __( 'Snippet: %s', 'wporg' ), $title );
 		}
 		return $title;
 	},
