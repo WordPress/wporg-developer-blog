@@ -38,7 +38,7 @@ add_action(
 				[
 					'core/paragraph',
 					[
-						'placeholder' => __( 'Describe your use case for this snippet', 'wporg' )
+						'placeholder' => __( 'Describe your use case for this snippet', 'wporg' ),
 					],
 				],
 				[ 'core/code' ],
@@ -54,7 +54,7 @@ add_action(
 					'core/paragraph',
 					[
 						'align'   => 'right',
-						'content' => '<em>Please add props here</em>'
+						'content' => '<em>Please add props here</em>',
 					],
 				],
 			],
