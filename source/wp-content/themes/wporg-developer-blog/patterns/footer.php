@@ -22,7 +22,7 @@
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"default"}} -->
 					<div class="wp-block-group">
 						<!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|blueberry-2"}}},"typography":{"fontStyle":"normal","fontWeight":"700"}},"textColor":"blueberry-2","fontSize":"normal","fontFamily":"inter"} -->
-						<h3 class="wp-block-heading has-blueberry-2-color has-text-color has-link-color has-inter-font-family has-normal-font-size" style="font-style:normal;font-weight:700"><strong><a href="https://developer.wordpress.org/news/how-to-contribute/"><?php esc_html_e( 'Learn how to contribute', 'wporg' ); ?></a></strong></h3>
+						<h3 class="wp-block-heading has-blueberry-2-color has-text-color has-link-color has-inter-font-family has-normal-font-size" style="font-style:normal;font-weight:700"><a href="https://developer.wordpress.org/news/how-to-contribute/"><?php esc_html_e( 'Learn how to contribute', 'wporg' ); ?></a></h3>
 						<!-- /wp:heading -->
 
 						<!-- wp:paragraph {"fontSize":"normal"} -->
@@ -38,7 +38,7 @@
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"default"}} -->
 					<div class="wp-block-group">
 						<!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|blueberry-2"}}}},"textColor":"blueberry-2","fontSize":"normal","fontFamily":"inter"} -->
-						<h3 class="wp-block-heading has-blueberry-2-color has-text-color has-link-color has-inter-font-family has-normal-font-size"><strong><a href="https://developer.wordpress.org/news/tips-and-guidelines-for-writers/"><?php esc_html_e( 'Review tips and guidelines', 'wporg' ); ?></a></strong></h3>
+						<h3 class="wp-block-heading has-blueberry-2-color has-text-color has-link-color has-inter-font-family has-normal-font-size"><a href="https://developer.wordpress.org/news/tips-and-guidelines-for-writers/"><?php esc_html_e( 'Review tips and guidelines', 'wporg' ); ?></a></h3>
 						<!-- /wp:heading -->
 
 						<!-- wp:paragraph -->
