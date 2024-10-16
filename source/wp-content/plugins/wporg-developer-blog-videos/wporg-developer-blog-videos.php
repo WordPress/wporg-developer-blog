@@ -24,6 +24,7 @@ add_action(
 				'singular_name' => _x( 'Video', 'Post type singular name', 'wporg' ),
 				'add_new'       => __( 'Add new Video', 'wporg' ),
 			],
+			'taxonomies'   => [ 'category' ],
 			'public'       => true,
 			'has_archive'  => true,
 			'hierarchical' => false,
