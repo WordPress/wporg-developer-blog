@@ -70,7 +70,7 @@ add_action(
 			],
 		];
 
-		register_post_type( 'dev-blog-videos', $cpt_args );
+		register_post_type( 'videos', $cpt_args );
 	}
 );
 
@@ -82,7 +82,7 @@ add_action(
 	'pre_get_posts',
 	function( $query ) {
 		if ( ! is_admin() && $query->is_main_query() && ( $query->is_home || $query->is_front_end ) ) {
-			$target_types = array( 'post', 'dev-blog-videos' );
+			$target_types = array( 'post', 'videos' );
 			$query->set( 'post_type', $target_types );
 		}
 	}
@@ -93,7 +93,7 @@ add_filter(
 	'request',
 	function( $query_vars ) {
 		if ( isset( $query_vars['feed'] ) && ! isset( $query_vars['post_type'] ) ) {
-			$query_vars['post_type'] = [ 'post', 'snippets', 'dev-blog-videos' ];
+			$query_vars['post_type'] = [ 'post', 'snippets', 'videos' ];
 		}
 		return $query_vars;
 	}
