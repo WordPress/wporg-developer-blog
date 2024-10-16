@@ -93,7 +93,7 @@ add_filter(
 	'request',
 	function( $query_vars ) {
 		if ( isset( $query_vars['feed'] ) && ! isset( $query_vars['post_type'] ) ) {
-			$query_vars['post_type'] = [ 'post', 'snippets', 'dev-blog-videos'];
+			$query_vars['post_type'] = [ 'post', 'snippets', 'dev-blog-videos' ];
 		}
 		return $query_vars;
 	}
