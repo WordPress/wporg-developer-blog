@@ -143,21 +143,6 @@ add_action(
 	}
 );
 
-/*
- * Display videos and snippets in the query loop block on the homepage.
- */
-add_action(
-	'query_loop_block_query_vars',
-	function( $query ) {
-		if ( ! is_admin() && ( is_front_page() || is_home() ) ) {
-			$query['post_type']   = (array) $query['post_type'];
-			$query['post_type'][] = 'dev-blog-videos';
-			$query['post_type'][] = 'snippets';
-		}
-		return $query;
-	}
-);
-
 // Filter snippets title to be prefixed.
 add_filter(
 	'the_title',
