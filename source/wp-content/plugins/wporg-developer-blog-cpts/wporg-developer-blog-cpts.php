@@ -30,7 +30,7 @@ add_action(
 				'hierarchical' => false,
 				'show_in_rest' => true,
 				'menu_icon'    => 'dashicons-editor-code',
-				'supports'     => [ 'title', 'editor', 'author', 'thumbnail', 'excerpt' ],
+				'supports'     => [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ],
 				'template'     => [
 					[
 						'core/paragraph',
@@ -69,7 +69,7 @@ add_action(
 				'hierarchical' => false,
 				'show_in_rest' => true,
 				'menu_icon'    => 'dashicons-format-video',
-				'supports'     => [ 'title', 'editor', 'author', 'thumbnail', 'excerpt' ],
+				'supports'     => [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ],
 				'template'     => [
 					[
 						'core/embed',
