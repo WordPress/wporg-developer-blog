@@ -30,7 +30,7 @@ add_action(
 				'hierarchical' => false,
 				'show_in_rest' => true,
 				'menu_icon'    => 'dashicons-editor-code',
-				'supports'     => [ 'title', 'editor', 'author', 'thumbnail' ],
+				'supports'     => [ 'title', 'editor', 'author', 'thumbnail', 'excerpt' ],
 				'template'     => [
 					[
 						'core/paragraph',
@@ -69,7 +69,7 @@ add_action(
 				'hierarchical' => false,
 				'show_in_rest' => true,
 				'menu_icon'    => 'dashicons-format-video',
-				'supports'     => [ 'title', 'editor', 'author', 'thumbnail' ],
+				'supports'     => [ 'title', 'editor', 'author', 'thumbnail', 'excerpt' ],
 				'template'     => [
 					[
 						'core/embed',
@@ -149,7 +149,7 @@ add_action(
 add_action(
 	'query_loop_block_query_vars',
 	function( $query ) {
-		if ( ! is_admin() && is_front_page() ) {
+		if ( ! is_admin() && ( is_front_page() || is_home() ) ) {
 			$query['post_type']   = (array) $query['post_type'];
 			$query['post_type'][] = 'dev-blog-videos';
 			$query['post_type'][] = 'snippets';
@@ -174,7 +174,7 @@ add_filter(
 	2
 );
 
-// Add the custom post typs to the main RSS feed.
+// Add the custom post types to the main RSS feed.
 add_filter(
 	'request',
 	function( $query_vars ) {
