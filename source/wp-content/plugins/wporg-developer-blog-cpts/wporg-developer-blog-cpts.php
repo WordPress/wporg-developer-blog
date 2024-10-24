@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Developer Blog custom post types and taxonomies.
+ * Plugin Name: Developer Blog CPTs
  * Plugin URI:  https://github.com/WordPress/wporg-developer-blog
  * Description: Manages all of the custom post types and taxonomies for the dev blog.
  * Version: 1.0.0
