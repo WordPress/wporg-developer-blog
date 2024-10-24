@@ -14,7 +14,7 @@
 		"./source/wp-content/plugins/gutenberg",
 		"./source/wp-content/plugins/jetpack",
 		"./source/wp-content/plugins/wordpress-importer",
-		"./source/wp-content/plugins/wporg-developer-blog-snippets"
+		"./source/wp-content/plugins/wporg-developer-blog-cpts"
 	],
 	"themes": [
 		"./source/wp-content/themes/wporg-developer-blog",
