@@ -12,7 +12,7 @@
  */
 
 /**
- * Register the CPT and tax for snippets.
+ * Register the post types and taxonomies.
  */
 add_action(
 	'init',
