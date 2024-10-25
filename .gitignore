@@ -25,4 +25,4 @@ phpcs.xml.dist
 !/source/wp-content/themes
 !/source/wp-content/themes/wporg-developer-blog
 !/source/wp-content/plugins
-!/source/wp-content/plugins/wporg-developer-blog-snippets
+!/source/wp-content/plugins/wporg-developer-blog-cpts
