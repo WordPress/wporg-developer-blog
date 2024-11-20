@@ -169,3 +169,13 @@ add_filter(
 		return $query_vars;
 	}
 );
+
+// Add mentions support to the custom post types.
+add_filter(
+	'jetpack_mentions_allowed_post_types',
+	function( $post_types ) {
+		$post_types[] = 'snippets';
+		$post_types[] = 'dev-blog-videos';
+		return $post_types;
+	}
+);
