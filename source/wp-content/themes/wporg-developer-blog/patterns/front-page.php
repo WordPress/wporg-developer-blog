@@ -72,7 +72,7 @@
 				<!-- /wp:group -->
 
 				<!-- wp:paragraph -->
-				<p><a href="all-posts/"><?php esc_html_e( 'View all posts', 'wporg' ); ?></a></p>
+				<p><a href="<?php echo home_url( '/all-posts/' ); ?>"><?php esc_html_e( 'View all posts', 'wporg' ); ?></a></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

@@ -17,7 +17,7 @@
 			sprintf(
 				/* translators: %s: url to view all posts */
 				__( 'View <a href="%s">all posts</a> or try a search.', 'wporg' ),
-				'/all-posts'
+				home_url( '/all-posts/' )
 			)
 		); ?>	
 	</p>
