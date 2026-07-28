@@ -40,7 +40,6 @@
 			"url": "git@github.com:WordPress/wporg-parent-2021.git"
 		}
 	],
-	"require": {},
 	"require-dev": {
 		"composer/installers": "~1.0",
 		"wpackagist-plugin/code-syntax-block": "*",
@@ -51,7 +50,7 @@
 		"wporg/wporg-mu-plugins": "dev-build",
 		"wporg/wporg-parent-2021": "dev-build",
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-		"wp-coding-standards/wpcs": "2.*",
+		"wp-coding-standards/wpcs": "^3.4.1",
 		"phpcompatibility/phpcompatibility-wp": "*",
 		"wp-phpunit/wp-phpunit": "^5.4",
 		"phpunit/phpunit": "^7.5.20"
