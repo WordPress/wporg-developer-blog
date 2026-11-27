@@ -31,6 +31,14 @@ kbd {
 }
 
 /*
+ * Bordered style for the Image block.
+ */
+
+.wp-block-image.is-style-bordered img {
+	border: 1px solid var(--wp--preset--color--light-grey-1);
+}
+
+/*
  * Remove text-decoration from linked footer headings.
  */
 
