@@ -7,7 +7,6 @@ namespace WordPressdotorg\Theme\Developer_Blog;
  */
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 add_action( 'after_setup_theme', __NAMESPACE__ . '\editor_setup' );
-add_action( 'init', __NAMESPACE__ . '\register_block_styles' );
 add_filter( 'excerpt_length', __NAMESPACE__ . '\customize_excerpt_length', 10 );
 add_filter( 'render_block_core/search', __NAMESPACE__ . '\search_block_add_search_action', 10, 2 );
 add_filter( 'render_block_core/post-author-name', __NAMESPACE__ . '\author_name_block_update_link_to_profile_text', 9, 2 );
@@ -57,19 +56,6 @@ function editor_setup() {
 	register_block_pattern_category(
 		'developer-blog',
 		array( 'label' => __( 'Developer Blog', 'wporg' ) )
-	);
-}
-
-/**
- * Register custom block styles.
- */
-function register_block_styles() {
-	register_block_style(
-		'core/image',
-		array(
-			'name'  => 'bordered',
-			'label' => __( 'Bordered', 'wporg' ),
-		)
 	);
 }
 
