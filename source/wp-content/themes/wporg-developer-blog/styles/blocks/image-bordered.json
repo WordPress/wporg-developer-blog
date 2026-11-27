@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Bordered",
+	"slug": "bordered",
+	"blockTypes": [ "core/image" ],
+	"styles": {
+		"border": {
+			"color": "var:preset|color|light-grey-1",
+			"style": "solid",
+			"width": "1px"
+		}
+	}
+}
